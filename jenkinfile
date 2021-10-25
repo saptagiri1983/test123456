@@ -1,1 +1,23 @@
-echo "Hello World this prod"
+pipeline {
+    agent any
+    stages {
+        stage ('BUILD MASTER') {
+            when {
+                branch 'main'
+            }
+            steps {
+                echo 'Building Production code'
+            }
+        
+        }
+        
+        stage ('BUILD DEV') {
+            when {
+                branch 'dev'
+            }
+            steps {
+                echo 'Building dev code'
+            }
+        }
+    }
+}

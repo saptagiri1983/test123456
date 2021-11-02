@@ -1,11 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('checkout'){
-              git 'https://github.com/saptagiri1983/test123456'
-        }
-        stage('Build'){
-             echo "checkout is completed"
-        }
-      }
-}
+        stage("checkout"){
+           steps {
+             git 'https://github.com/saptagiri1983/test123456'
+             echo "Done with the Code checkout"
+                 }
+                          }
+            }
+         }

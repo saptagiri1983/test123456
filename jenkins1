@@ -3,9 +3,9 @@ pipeline {
     stages {
         stage('checkout'){
               git 'https://github.com/saptagiri1983/test123456'
-        }
-        stage('Build'){
-             echo "checkout is completed"
-        }
-      }
-}
+        steps {
+           echo "Done with the Code checkout"
+               }
+               }
+               }
+               }

@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage ('BUILD Test1') {
+        stage ('BUILD Test2') {
             when {
                 branch 'test'
             }

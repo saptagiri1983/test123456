@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage ('BUILD MASTER4') {
+        stage ('BUILD Test1') {
             when {
-                branch 'main'
+                branch 'test'
             }
             steps {
                 echo 'Building Production code'
@@ -18,6 +18,26 @@ pipeline {
             steps {
                 echo 'Building dev code'
             }
+        }
+		
+		stage ('BUILD qa1') {
+            when {
+                branch 'qa'
+            }
+            steps {
+                echo 'Building qa code'
+            }
+        
+        }
+		
+		stage ('BUILD MASTER1') {
+            when {
+                branch 'main'
+            }
+            steps {
+                echo 'Building Production code'
+            }
+        
         }
     }
 }

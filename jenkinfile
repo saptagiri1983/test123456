@@ -1,1 +1,43 @@
-echo "Welcome hellow"
+pipeline {
+    agent any
+    stages {
+        stage ('BUILD Test') {
+            when {
+                branch 'test'
+            }
+            steps {
+                echo 'Building Production code'
+            }
+        
+        }
+        
+        stage ('BUILD DEV') {
+            when {
+                branch 'dev'
+            }
+            steps {
+                echo 'Building dev code'
+            }
+        }
+		
+		stage ('BUILD qa') {
+            when {
+                branch 'qa'
+            }
+            steps {
+                echo 'Building qa code'
+            }
+        
+        }
+		
+		stage ('BUILD MASTER') {
+            when {
+                branch 'main'
+            }
+            steps {
+                echo 'Building Production code'
+            }
+        
+        }
+    }
+}
